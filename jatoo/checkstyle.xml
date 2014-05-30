@@ -62,11 +62,11 @@
         <property name="eachLine" value="true"/>
     </module>
 
-    <module name="RegexpSingleline">
+<!--     <module name="RegexpSingleline"> -->
         <!-- \s matches whitespace character, $ matches end of line. -->
-        <property name="format" value="\s+$"/>
-        <property name="message" value="Line has trailing spaces."/>
-    </module>
+<!--         <property name="format" value="\s+$"/> -->
+<!--         <property name="message" value="Line has trailing spaces."/> -->
+<!--     </module> -->
 
     <module name="TreeWalker">
 
