@@ -13,11 +13,18 @@
 
 	<body>
 
-		<links>
-			<item name="Apache" href="http://www.apache.org/" />
-			<item name="Maven 1.0" href="http://maven.apache.org/" />
-			<item name="Maven 2" href="http://maven.apache.org/" />
-		</links>
+		<!-- <links> -->
+		<!-- <item name="Apache" href="http://www.apache.org/" /> -->
+		<!-- <item name="Maven 1.0" href="http://maven.apache.org/" /> -->
+		<!-- <item name="Maven 2" href="http://maven.apache.org/" /> -->
+		<!-- </links> -->
+
+		<menu inherit="bottom" ref="reports" />
+
+		<menu inherit="bottom" name="JaToo Projects">
+			<item name="JaToo :: Mp3" href="jatoo-mp3/index.html"></item>
+			<item name="JaToo :: Proxy" href="jatoo-proxy/index.html"></item>
+		</menu>
 
 	</body>
 
