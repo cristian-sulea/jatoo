@@ -68,8 +68,14 @@
 	<scm>
 		<connection>scm:git:file://..</connection>
 		<!-- <developerConnection>scm:git:file://c:/Temp/Git Repositories/JaToo/</developerConnection> -->
-		<!-- <url>file://c:/Temp/Git Repositories/JaToo/</url> -->
+		<!-- <url>https://github.com/cristian-sulea/jatoo-proxy/blob/master/jatoo-proxy</url> -->
 	</scm>
+
+<!-- 	<scm> -->
+<!-- 		<url>https://github.com/cristian-sulea/jatoo-proxy/blob/master/jatoo-proxy</url> -->
+<!-- 		<connection>scm:git:git://github.com/cristian-sulea/jatoo-proxy.git</connection> -->
+<!-- 		<developerConnection>scm:git:git@github.com:kevinsawicki/github-maven-example.git</developerConnection> -->
+<!-- 	</scm> -->
 
 
 	<build>
@@ -160,7 +166,7 @@
 					<reportSet>
 						<reports>
 							<report>javadoc</report>
-							<report>test-javadoc</report>
+							<!-- <report>test-javadoc</report> -->
 						</reports>
 					</reportSet>
 				</reportSets>
@@ -174,7 +180,7 @@
 					<reportSet>
 						<reports>
 							<report>jxr</report>
-							<report>test-jxr</report>
+							<!-- <report>test-jxr</report> -->
 						</reports>
 					</reportSet>
 				</reportSets>

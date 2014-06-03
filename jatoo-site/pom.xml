@@ -51,6 +51,7 @@
 
 	<modules>
 		<module>../../jatoo-mp3/jatoo-mp3</module>
+		<module>../../jatoo-proxy/jatoo-proxy</module>
 	</modules>
 
 </project>
