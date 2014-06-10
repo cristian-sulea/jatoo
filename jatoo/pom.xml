@@ -71,14 +71,35 @@
 		<!-- <url>https://github.com/cristian-sulea/jatoo-proxy/blob/master/jatoo-proxy</url> -->
 	</scm>
 
-<!-- 	<scm> -->
-<!-- 		<url>https://github.com/cristian-sulea/jatoo-proxy/blob/master/jatoo-proxy</url> -->
-<!-- 		<connection>scm:git:git://github.com/cristian-sulea/jatoo-proxy.git</connection> -->
-<!-- 		<developerConnection>scm:git:git@github.com:kevinsawicki/github-maven-example.git</developerConnection> -->
-<!-- 	</scm> -->
-
 
 	<build>
+
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>com.github.wvengen</groupId>
+					<artifactId>proguard-maven-plugin</artifactId>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>proguard</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<libs>
+							<lib>${java.home}/lib/rt.jar</lib>
+							<lib>${java.home}/lib/jce.jar</lib>
+						</libs>
+						<proguardInclude>${basedir}/../../jatoo/jatoo/proguard.library</proguardInclude>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
 		<plugins>
 
 			<plugin>
