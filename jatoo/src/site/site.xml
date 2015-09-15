@@ -4,27 +4,37 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
 
-	<bannerRight>
-		<name>${project.name}</name>
-		<alt>${project.name}</alt>
-		<src>jatoo/images/logo-${project.artifactId}.png</src>
-		<href>jatoo/index.html</href>
-	</bannerRight>
+<!-- 	<skin> -->
+<!-- 		<groupId>org.apache.maven.skins</groupId> -->
+<!-- 		<artifactId>maven-stylus-skin</artifactId> -->
+<!-- 		<version>1.6-SNAPSHOT</version> -->
+<!-- 	</skin> -->
+
+<!-- 	<bannerLeft> -->
+<!-- 		<src>images/logo.png</src> -->
+<!-- 		<name>${project.name}</name> -->
+<!-- 		<alt>${project.name}</alt> -->
+<!-- 		<href>index.html</href> -->
+<!-- 	</bannerLeft> -->
+
+	<publishDate position="right" />
+	<version position="right" />
 
 	<body>
 
-		<!-- <links> -->
-		<!-- <item name="Apache" href="http://www.apache.org/" /> -->
-		<!-- <item name="Maven 1.0" href="http://maven.apache.org/" /> -->
-		<!-- <item name="Maven 2" href="http://maven.apache.org/" /> -->
-		<!-- </links> -->
+		<breadcrumbs>
+			<item href="http://cristian.sulea.net" name="Cristian Sulea" />
+			<item href="http://cristian.sulea.net/projects/" name="Projects" />
+		</breadcrumbs>
 
 		<menu inherit="bottom" ref="reports" />
 
-		<menu inherit="bottom" name="JaToo Projects">
-			<item name="JaToo :: Mp3" href="jatoo-mp3/index.html"></item>
-			<item name="JaToo :: Proxy" href="jatoo-proxy/index.html"></item>
-		</menu>
+		<!-- <menu inherit="bottom" ref="modules" name="Projects" /> -->
+
+		<!-- <menu inherit="bottom" name="Projects"> -->
+		<!-- <item href="jaco-watermark/index.html" name="JACo Watermark" /> -->
+		<!-- <item href="jatoo-proxy/index.html" name="JaToo Proxy" /> -->
+		<!-- </menu> -->
 
 	</body>
 
