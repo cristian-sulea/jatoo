@@ -12,7 +12,7 @@
 
 
 	<name>JaToo</name>
-	<description>The Projects POM provides common settings for all projects.</description>
+	<description>A Java Open Source tools and utilities to be used day by day in Java™ development as libraries or as stand alone applications.</description>
 	<url>http://cristian.sulea.net/projects/jatoo/</url>
 
 	<inceptionYear>2014</inceptionYear>
