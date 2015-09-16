@@ -50,6 +50,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+		<site.folder>${basedir}/src/site</site.folder>
+
 	</properties>
 
 
@@ -153,14 +155,14 @@
 					</archive>
 				</configuration>
 				<executions>
-				  <execution>
-					<id>attach-sources</id>
-					<phase>package</phase>
-					<goals>
-					  <goal>jar-no-fork</goal>
-					  <goal>test-jar-no-fork</goal>
-					</goals>
-				  </execution>
+					<execution>
+						<id>attach-sources</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+							<goal>test-jar-no-fork</goal>
+						</goals>
+					</execution>
 				</executions>
 			</plugin>
 
@@ -182,6 +184,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.3</version>
+				<configuration>
+					<siteDirectory>${site.folder}</siteDirectory>
+				</configuration>
 			</plugin>
 
 		</plugins>
@@ -238,119 +243,179 @@
 
 
 	<reporting>
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.7</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-<!-- 							<report>index</report> -->
-							<report>summary</report>
-							<report>dependencies</report>
-<!-- 							<report>project-team</report> -->
-							<report>license</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.12.1</version>
-				<configuration>
-					<configLocation>checkstyle.xml</configLocation>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>checkstyle</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<skipEmptyReport>false</skipEmptyReport>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>pmd</report>
-							<report>cpd</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-changelog-plugin</artifactId> -->
-<!-- 				<version>2.2</version> -->
-<!-- 				<reportSets> -->
-<!-- 					<reportSet> -->
-<!-- 						<configuration> -->
-<!-- 							<type>range</type> -->
-<!-- 							<range>999</range> -->
-<!-- 						</configuration> -->
-<!-- 						<reports> -->
-<!-- 							<report>changelog</report> -->
-<!-- 							<report>file-activity</report> -->
-<!-- 							<report>dev-activity</report> -->
-<!-- 						</reports> -->
-<!-- 					</reportSet> -->
-<!-- 				</reportSets> -->
-<!-- 			</plugin> -->
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.17</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>javadoc</report>
-							<report>test-javadoc</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.4</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>jxr</report>
-							<report>test-jxr</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-
-		</plugins>
+		<excludeDefaults>true</excludeDefaults>
 	</reporting>
 
+
+	<profiles>
+
+		<profile>
+
+			<id>site</id>
+
+			<activation>
+				<property>
+					<name>site</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<properties>
+				<site.folder>${basedir}/src/site</site.folder>
+			</properties>
+
+			<reporting>
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<version>2.7</version>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>index</report>
+									<report>summary</report>
+									<report>dependencies</report>
+<!-- 									<report>project-team</report> -->
+									<report>license</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>3.0.0</version>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<version>2.12.1</version>
+						<configuration>
+							<configLocation>checkstyle.xml</configLocation>
+						</configuration>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>checkstyle</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<version>3.1</version>
+						<configuration>
+							<skipEmptyReport>false</skipEmptyReport>
+						</configuration>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>pmd</report>
+									<report>cpd</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+
+<!-- 					<plugin> -->
+<!-- 						<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 						<artifactId>maven-changelog-plugin</artifactId> -->
+<!-- 						<version>2.2</version> -->
+<!-- 						<reportSets> -->
+<!-- 							<reportSet> -->
+<!-- 								<configuration> -->
+<!-- 									<type>range</type> -->
+<!-- 									<range>999</range> -->
+<!-- 								</configuration> -->
+<!-- 								<reports> -->
+<!-- 									<report>changelog</report> -->
+<!-- 									<report>file-activity</report> -->
+<!-- 									<report>dev-activity</report> -->
+<!-- 								</reports> -->
+<!-- 							</reportSet> -->
+<!-- 						</reportSets> -->
+<!-- 					</plugin> -->
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-report-plugin</artifactId>
+						<version>2.17</version>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>javadoc</report>
+									<report>test-javadoc</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jxr-plugin</artifactId>
+						<version>2.4</version>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>jxr</report>
+									<report>test-jxr</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+
+				</plugins>
+			</reporting>
+
+		</profile>
+
+		<profile>
+
+			<id>site-gh-pages</id>
+
+			<activation>
+				<property>
+					<name>site-gh-pages</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<properties>
+				<site.folder>${basedir}/../../jatoo/jatoo/src/site-gh-pages</site.folder>
+			</properties>
+
+
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<version>2.7</version>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>index</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+				</plugins>
+			</reporting>
+
+		</profile>
+
+	</profiles>
 
 </project>
