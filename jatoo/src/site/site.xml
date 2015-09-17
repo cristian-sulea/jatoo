@@ -4,18 +4,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
 
-<!-- 	<skin> -->
-<!-- 		<groupId>org.apache.maven.skins</groupId> -->
-<!-- 		<artifactId>maven-stylus-skin</artifactId> -->
-<!-- 		<version>1.6-SNAPSHOT</version> -->
-<!-- 	</skin> -->
+	<skin>
+		<groupId>net.sulea.cristian</groupId>
+		<artifactId>maven-skin-stylus-1.5-custom</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</skin>
 
-<!-- 	<bannerLeft> -->
-<!-- 		<src>images/logo.png</src> -->
-<!-- 		<name>${project.name}</name> -->
-<!-- 		<alt>${project.name}</alt> -->
-<!-- 		<href>index.html</href> -->
-<!-- 	</bannerLeft> -->
+	<!-- <bannerLeft> -->
+	<!-- <src>images/logo.png</src> -->
+	<!-- <name>${project.name}</name> -->
+	<!-- <alt>${project.name}</alt> -->
+	<!-- <href>index.html</href> -->
+	<!-- </bannerLeft> -->
 
 	<publishDate position="right" />
 	<version position="right" />
@@ -28,14 +28,6 @@
 		</breadcrumbs>
 
 		<menu inherit="bottom" ref="reports" />
-
-		<!-- <menu inherit="bottom" ref="modules" name="Projects" /> -->
-
-		<!-- <menu inherit="bottom" name="Projects"> -->
-		<!-- <item href="jaco-watermark/index.html" name="JACo Watermark" /> -->
-		<!-- <item href="jatoo-proxy/index.html" name="JaToo Proxy" /> -->
-		<!-- </menu> -->
-
 	</body>
 
 </project>
