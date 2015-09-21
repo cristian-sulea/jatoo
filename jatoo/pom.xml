@@ -383,19 +383,52 @@
 
 		<profile>
 
-			<id>site-gh-pages</id>
+			<id>site-landing-page-github</id>
 
 			<activation>
 				<property>
-					<name>site-gh-pages</name>
+					<name>site-landing-page-github</name>
 					<value>true</value>
 				</property>
 			</activation>
 
 			<properties>
-				<site.folder>${basedir}/../../jatoo/jatoo/src/site-gh-pages</site.folder>
+				<site.folder>${basedir}/../../jatoo/jatoo/src/site-landing-page-github</site.folder>
 			</properties>
 
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<version>2.7</version>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>index</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+				</plugins>
+			</reporting>
+
+		</profile>
+
+		<profile>
+
+			<id>site-landing-page-sourceforge</id>
+
+			<activation>
+				<property>
+					<name>site-landing-page-sourceforge</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<properties>
+				<site.folder>${basedir}/../../jatoo/jatoo/src/site-landing-page-sourceforge</site.folder>
+			</properties>
 
 			<reporting>
 				<plugins>
