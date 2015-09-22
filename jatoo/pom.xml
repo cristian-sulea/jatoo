@@ -56,10 +56,10 @@
 
 
 	<distributionManagement>
-		<site>
-			<id>cristian.sulea.net.projects</id>
-			<url>file://c:/Temp/cristian.sulea.net/projects</url>
-		</site>
+		<repository>
+			<id>maven-deploy</id>
+			<url>file://${basedir}\target\maven-deploy</url>
+		</repository>
 	</distributionManagement>
 
 
