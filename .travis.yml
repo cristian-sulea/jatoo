@@ -1,2 +1,2 @@
 language: java
-script: cd jatoo && mvn clean test package site && cd target && ls
+script: cd jatoo && mvn clean install site && cd target && ls
