@@ -10,12 +10,12 @@
 	<!-- <version>1.2</version> -->
 	<!-- </skin> -->
 
-	<!-- <bannerLeft> -->
-	<!-- <src>images/logo.png</src> -->
-	<!-- <name>${project.name}</name> -->
-	<!-- <alt>${project.name}</alt> -->
-	<!-- <href>index.html</href> -->
-	<!-- </bannerLeft> -->
+	<bannerLeft>
+		<src>images/logo.png</src>
+		<name>${project.name}</name>
+		<alt>${project.name}</alt>
+		<href>index.html</href>
+	</bannerLeft>
 
 	<publishDate position="right" />
 	<version position="right" />
@@ -31,7 +31,18 @@
 			<item href="http://cristian.sulea.net/projects/" name="Projects" />
 		</breadcrumbs>
 
+		<menu name="${project.name}">
+			<item name="Overview" href="index.html" />
+		</menu>
+
+		<menu name="GitHub">
+			<item name="Code" href="https://github.com/cristian-sulea/${project.artifactId}" />
+			<item name="Issues" href="https://github.com/cristian-sulea/${project.artifactId}/issues" />
+			<item name="Pull requests" href="https://github.com/cristian-sulea/${project.artifactId}/pulls" />
+		</menu>
+
 		<menu inherit="bottom" ref="reports" />
+
 	</body>
 
 </project>
