@@ -8,20 +8,33 @@
 	<packaging>pom</packaging>
 
 
-	<version>2.1</version>
+	<version>2.2-SNAPSHOT</version>
 
 
 	<name>JaToo</name>
-	<description>A Java Open Source tools and utilities to be used day by day in Java development as libraries or as stand alone applications.</description>
+	<description>A set of Java™ Open Source tools and utilities to be used day by day in Java™ development as libraries or as stand alone applications.</description>
 	<url>http://cristian.sulea.net/projects/jatoo/</url>
 
 	<inceptionYear>2014</inceptionYear>
 
 
-	<organization>
-		<name>Cristian Sulea</name>
-		<url>http://cristian.sulea.net</url>
-	</organization>
+	<scm>
+		<connection>scm:git:git@github.com:cristian-sulea/jatoo.git</connection>
+		<developerConnection>scm:git:git@github.com:cristian-sulea/jatoo.git</developerConnection>
+		<url>https://github.com/cristian-sulea/jatoo</url>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
 
 	<developers>
 		<developer>
@@ -31,6 +44,8 @@
 			<url>http://cristian.sulea.net</url>
 			<roles>
 				<role>owner</role>
+				<role>architect</role>
+				<role>developer</role>
 			</roles>
 			<timezone>+3</timezone>
 		</developer>
@@ -54,19 +69,6 @@
 		<site.folder>${basedir}/src/site</site.folder>
 
 	</properties>
-
-
-	<distributionManagement>
-		<repository>
-			<id>maven-deploy</id>
-			<url>file://${basedir}/target/maven-deploy</url>
-		</repository>
-	</distributionManagement>
-
-
-	<scm>
-		<connection>scm:git:file://..</connection>
-	</scm>
 
 
 	<dependencies>
@@ -183,10 +185,34 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.3</version>
+				<executions>
+					<execution>
+						<id>attach-descriptor</id>
+						<goals>
+							<goal>attach-descriptor</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<siteDirectory>${site.folder}</siteDirectory>
+					<locales>en</locales>
 				</configuration>
 			</plugin>
 
@@ -195,26 +221,26 @@
 		<pluginManagement>
 			<plugins>
 
-<!-- 				<plugin> -->
-<!-- 					<groupId>com.github.wvengen</groupId> -->
-<!-- 					<artifactId>proguard-maven-plugin</artifactId> -->
-<!-- 					<version>2.0.7</version> -->
-<!-- 					<executions> -->
-<!-- 						<execution> -->
-<!-- 							<phase>package</phase> -->
-<!-- 							<goals> -->
-<!-- 								<goal>proguard</goal> -->
-<!-- 							</goals> -->
-<!-- 						</execution> -->
-<!-- 					</executions> -->
-<!-- 					<configuration> -->
-<!-- 						<libs> -->
-<!-- 							<lib>${java.home}/lib/rt.jar</lib> -->
-<!-- 							<lib>${java.home}/lib/jce.jar</lib> -->
-<!-- 						</libs> -->
-<!-- 						<proguardInclude>../../jatoo/jatoo/proguard.cfg</proguardInclude> -->
-<!-- 					</configuration> -->
-<!-- 				</plugin> -->
+				<!-- <plugin> -->
+				<!-- <groupId>com.github.wvengen</groupId> -->
+				<!-- <artifactId>proguard-maven-plugin</artifactId> -->
+				<!-- <version>2.0.7</version> -->
+				<!-- <executions> -->
+				<!-- <execution> -->
+				<!-- <phase>package</phase> -->
+				<!-- <goals> -->
+				<!-- <goal>proguard</goal> -->
+				<!-- </goals> -->
+				<!-- </execution> -->
+				<!-- </executions> -->
+				<!-- <configuration> -->
+				<!-- <libs> -->
+				<!-- <lib>${java.home}/lib/rt.jar</lib> -->
+				<!-- <lib>${java.home}/lib/jce.jar</lib> -->
+				<!-- </libs> -->
+				<!-- <proguardInclude>../../jatoo/jatoo/proguard.cfg</proguardInclude> -->
+				<!-- </configuration> -->
+				<!-- </plugin> -->
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -271,7 +297,7 @@
 									<report>index</report>
 									<report>summary</report>
 									<report>dependencies</report>
-<!-- 									<report>project-team</report> -->
+									<!-- <report>project-team</report> -->
 									<report>license</report>
 								</reports>
 							</reportSet>
@@ -317,24 +343,24 @@
 						</reportSets>
 					</plugin>
 
-<!-- 					<plugin> -->
-<!-- 						<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 						<artifactId>maven-changelog-plugin</artifactId> -->
-<!-- 						<version>2.2</version> -->
-<!-- 						<reportSets> -->
-<!-- 							<reportSet> -->
-<!-- 								<configuration> -->
-<!-- 									<type>range</type> -->
-<!-- 									<range>999</range> -->
-<!-- 								</configuration> -->
-<!-- 								<reports> -->
-<!-- 									<report>changelog</report> -->
-<!-- 									<report>file-activity</report> -->
-<!-- 									<report>dev-activity</report> -->
-<!-- 								</reports> -->
-<!-- 							</reportSet> -->
-<!-- 						</reportSets> -->
-<!-- 					</plugin> -->
+					<!-- <plugin> -->
+					<!-- <groupId>org.apache.maven.plugins</groupId> -->
+					<!-- <artifactId>maven-changelog-plugin</artifactId> -->
+					<!-- <version>2.2</version> -->
+					<!-- <reportSets> -->
+					<!-- <reportSet> -->
+					<!-- <configuration> -->
+					<!-- <type>range</type> -->
+					<!-- <range>999</range> -->
+					<!-- </configuration> -->
+					<!-- <reports> -->
+					<!-- <report>changelog</report> -->
+					<!-- <report>file-activity</report> -->
+					<!-- <report>dev-activity</report> -->
+					<!-- </reports> -->
+					<!-- </reportSet> -->
+					<!-- </reportSets> -->
+					<!-- </plugin> -->
 
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
