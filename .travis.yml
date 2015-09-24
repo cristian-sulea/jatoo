@@ -1,0 +1,2 @@
+language: java
+script: cd jatoo-log4j && mvn clean test package site && cd target && ls
