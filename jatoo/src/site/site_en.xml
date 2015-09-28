@@ -7,7 +7,7 @@
 	<skin>
 		<groupId>net.sulea.cristian</groupId>
 		<artifactId>maven-skin-stylus-1.5-custom</artifactId>
-		<version>1.2</version>
+		<version>1.3-SNAPSHOT</version>
 	</skin>
 
 	<bannerLeft>
@@ -22,6 +22,7 @@
 
 	<custom>
 		<googleAnalyticsTrackingID>UA-56392483-1</googleAnalyticsTrackingID>
+		<favicon>images/favicon.ico</favicon>
 	</custom>
 
 	<body>
@@ -42,6 +43,16 @@
 		</menu>
 
 		<menu inherit="bottom" ref="reports" />
+
+<!-- 		<menu name="JaToo Projects" inherit="bottom"> -->
+<!-- 			<item name="JaToo"       href="http://cristian.sulea.net/projects/jatoo/" /> -->
+<!-- 			<item name="JaToo Log4j" href="http://cristian.sulea.net/projects/jatoo-log4j/" /> -->
+<!-- 		</menu> -->
+
+<!-- 		<menu name="Maven Skins" inherit="bottom"> -->
+<!-- 			<item name="Site Landing Page" href="http://cristian.sulea.net/projects/jatoo/" /> -->
+<!-- 			<item name="Custom v.1.5 Stylus" href="http://cristian.sulea.net/projects/jatoo-log4j/" /> -->
+<!-- 		</menu> -->
 
 	</body>
 
