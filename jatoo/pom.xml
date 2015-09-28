@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 
-	<version>2.2</version>
+	<version>2.3-SNAPSHOT</version>
 
 
 	<name>JaToo</name>
@@ -294,7 +294,7 @@
 						<reportSets>
 							<reportSet>
 								<reports>
-									<report>index</report>
+<!-- 									<report>index</report> -->
 									<report>summary</report>
 									<report>dependencies</report>
 									<!-- <report>project-team</report> -->
