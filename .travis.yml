@@ -1,2 +1,2 @@
 language: java
-script: cd jatoo && mvn clean install site && cd target && ls
+script: cd jatoo && mvn clean install -Dgpg.skip=true && cd target && ls
