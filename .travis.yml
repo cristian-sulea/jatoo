@@ -1,2 +1,2 @@
 language: java
-script: cd jatoo && mvn clean install -Dgpg.skip=true && ls -1 target
+jdk:      oraclejdk8
