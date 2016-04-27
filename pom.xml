@@ -1,407 +1,84 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
 
-	<parent>
-		<groupId>net.sulea.cristian</groupId>
-		<artifactId>parent</artifactId>
-		<!-- <relativePath>../../parent/parent/pom.xml</relativePath> -->
-		<version>1.1</version>
-	</parent>
-
-	<artifactId>jatoo</artifactId>
-	<packaging>pom</packaging>
-
-
-	<version>3.0</version>
-
-
-	<name>JaToo</name>
-	<description>A set of Java™ Open Source tools and utilities to be used day by day in Java™ development as libraries or as stand alone applications.</description>
-	<url>http://cristian.sulea.net/projects/jatoo/</url>
-
-	<inceptionYear>2014</inceptionYear>
-
-
-	<scm>
-		<connection>scm:git:git@github.com:cristian-sulea/jatoo.git</connection>
-		<developerConnection>scm:git:git@github.com:cristian-sulea/jatoo.git</developerConnection>
-		<url>https://github.com/cristian-sulea/jatoo</url>
-	</scm>
-
-
-	<developers>
-		<developer>
-			<id>cristian.sulea</id>
-			<name>Cristian Sulea</name>
-			<email>cristian.sulea.79@gmail.com</email>
-			<url>http://cristian.sulea.net</url>
-			<roles>
-				<role>owner</role>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-			<timezone>+3</timezone>
-		</developer>
-	</developers>
-
-
-	<dependencies>
-
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-
-			<dependency>
-				<groupId>com.miglayout</groupId>
-				<artifactId>miglayout-swing</artifactId>
-				<version>4.2</version>
-			</dependency>
-
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>1.2.17</version>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>2.4</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.jcraft</groupId>
-				<artifactId>jsch</artifactId>
-				<version>0.1.50</version>
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
-
-
-	<build>
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.3</version>
-				<executions>
-					<execution>
-						<id>attach-descriptor</id>
-						<goals>
-							<goal>attach-descriptor</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<locales>en</locales>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.12.1</version>
-				<dependencies>
-					<dependency>
-						<groupId>net.sulea.cristian</groupId>
-						<artifactId>maven-checkstyle-rules</artifactId>
-						<version>1.0</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-		</plugins>
-	</build>
-
-
-	<reporting>
-		<excludeDefaults>true</excludeDefaults>
-	</reporting>
-
-
-	<profiles>
-
-		<profile>
-
-			<id>obfuscate</id>
-
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.github.wvengen</groupId>
-						<artifactId>proguard-maven-plugin</artifactId>
-						<version>2.0.7</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>proguard</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<libs>
-								<lib>${java.home}/lib/rt.jar</lib>
-								<lib>${java.home}/lib/jce.jar</lib>
-							</libs>
-							<proguardInclude>../../jatoo/jatoo/src/main/resources/proguard.conf</proguardInclude>
-							<addMavenDescriptor>true</addMavenDescriptor>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-
-			<id>assembly</id>
-
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-assembly-plugin</artifactId>
-						<version>2.4</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>single</goal>
-								</goals>
-							</execution>
-						</executions>
-						<dependencies>
-							<dependency>
-								<groupId>net.sulea.cristian</groupId>
-								<artifactId>maven-assembly-descriptors</artifactId>
-								<version>1.2</version>
-							</dependency>
-						</dependencies>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>dist-bin</descriptorRef>
-								<descriptorRef>dist-src</descriptorRef>
-							</descriptorRefs>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-
-			<id>site</id>
-
-			<reporting>
-				<plugins>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-project-info-reports-plugin</artifactId>
-						<version>2.7</version>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<!-- <report>index</report> -->
-									<report>summary</report>
-									<report>dependencies</report>
-									<!-- <report>project-team</report> -->
-									<report>license</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>findbugs-maven-plugin</artifactId>
-						<version>3.0.0</version>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-checkstyle-plugin</artifactId>
-						<version>2.12.1</version>
-						<configuration>
-							<configLocation>checkstyle.xml</configLocation>
-						</configuration>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<report>checkstyle</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-pmd-plugin</artifactId>
-						<version>3.1</version>
-						<configuration>
-							<skipEmptyReport>false</skipEmptyReport>
-						</configuration>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<report>pmd</report>
-									<report>cpd</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-
-					<!-- <plugin> -->
-					<!-- <groupId>org.apache.maven.plugins</groupId> -->
-					<!-- <artifactId>maven-changelog-plugin</artifactId> -->
-					<!-- <version>2.2</version> -->
-					<!-- <reportSets> -->
-					<!-- <reportSet> -->
-					<!-- <configuration> -->
-					<!-- <type>range</type> -->
-					<!-- <range>999</range> -->
-					<!-- </configuration> -->
-					<!-- <reports> -->
-					<!-- <report>changelog</report> -->
-					<!-- <report>file-activity</report> -->
-					<!-- <report>dev-activity</report> -->
-					<!-- </reports> -->
-					<!-- </reportSet> -->
-					<!-- </reportSets> -->
-					<!-- </plugin> -->
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-report-plugin</artifactId>
-						<version>2.17</version>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.9.1</version>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<report>javadoc</report>
-									<report>test-javadoc</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jxr-plugin</artifactId>
-						<version>2.4</version>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<report>jxr</report>
-									<report>test-jxr</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-
-				</plugins>
-			</reporting>
-
-		</profile>
-
-		<profile>
-
-			<id>site-landing-page-github</id>
-
-			<build>
-				<plugins>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-site-plugin</artifactId>
-						<configuration>
-							<siteDirectory>../../jatoo/jatoo/src/site-landing-page-github</siteDirectory>
-						</configuration>
-					</plugin>
-
-				</plugins>
-			</build>
-
-			<reporting>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-project-info-reports-plugin</artifactId>
-						<version>2.7</version>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<report>index</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-				</plugins>
-			</reporting>
-
-		</profile>
-
-		<profile>
-
-			<id>site-landing-page-sourceforge</id>
-
-			<build>
-				<plugins>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-site-plugin</artifactId>
-						<configuration>
-							<siteDirectory>../../jatoo/jatoo/src/site-landing-page-sourceforge</siteDirectory>
-						</configuration>
-					</plugin>
-
-				</plugins>
-			</build>
-
-			<reporting>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-project-info-reports-plugin</artifactId>
-						<version>2.7</version>
-						<reportSets>
-							<reportSet>
-								<reports>
-									<report>index</report>
-								</reports>
-							</reportSet>
-						</reportSets>
-					</plugin>
-				</plugins>
-			</reporting>
-
-		</profile>
-
-	</profiles>
+  <parent>
+    <groupId>net.sulea.cristian</groupId>
+    <artifactId>maven-project-parent-java</artifactId>
+    <!-- <relativePath>../../parent/parent/pom.xml</relativePath> -->
+    <version>1.1</version>
+  </parent>
+
+  <artifactId>jatoo</artifactId>
+  <packaging>pom</packaging>
+
+
+  <version>4.0</version>
+
+
+  <name>JaToo</name>
+  <description>A set of Java™ Open Source tools and utilities to be used day by day in Java™ development as libraries or as stand alone applications.</description>
+  <url>http://cristian.sulea.net/projects/jatoo/</url>
+
+  <inceptionYear>2014</inceptionYear>
+
+
+  <developers>
+    <developer>
+      <id>cristian.sulea</id>
+      <name>Cristian Sulea</name>
+      <email>cristian.sulea.79@gmail.com</email>
+      <url>http://cristian.sulea.net</url>
+    </developer>
+  </developers>
+
+
+  <scm>
+    <connection>scm:git:git@github.com:cristian-sulea/jatoo.git</connection>
+    <developerConnection>scm:git:git@github.com:cristian-sulea/jatoo.git</developerConnection>
+    <url>https://github.com/cristian-sulea/jatoo</url>
+  </scm>
+
+
+  <properties>
+
+    <property.plugin.source.skip>false</property.plugin.source.skip>
+    <property.plugin.javadoc.skip>false</property.plugin.javadoc.skip>
+    <property.plugin.checkstyle.skip>false</property.plugin.checkstyle.skip>
+
+  </properties>
+
+
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>com.miglayout</groupId>
+        <artifactId>miglayout-swing</artifactId>
+        <version>4.2</version>
+      </dependency>
+
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.jcraft</groupId>
+        <artifactId>jsch</artifactId>
+        <version>0.1.50</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
 
 
 </project>
