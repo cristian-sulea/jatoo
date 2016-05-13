@@ -5,8 +5,8 @@
   <parent>
     <groupId>net.sulea.cristian</groupId>
     <artifactId>maven-project-parent-java</artifactId>
-<!--     <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
-    <version>1.2.1</version>
+    <!-- <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
+    <version>1.4.1</version>
   </parent>
 
   <artifactId>jatoo</artifactId>
@@ -39,38 +39,28 @@
     <url>https://github.com/cristian-sulea/jatoo</url>
   </scm>
 
+  <distributionManagement>
+    <site>
+      <id>cristian.sulea.net-projects</id>
+      <url>file:///cristian.sulea.net-projects/${project.artifactId}/</url>
+    </site>
+  </distributionManagement>
+
 
   <properties>
 
-<!--     <skip.plugin.source>false</skip.plugin.source> -->
-<!--     <skip.plugin.javadoc>false</skip.plugin.javadoc> -->
-<!--     <skip.plugin.checkstyle>false</skip.plugin.checkstyle> -->
+    <!-- <maven.test.skip>true</maven.test.skip> -->
+
+    <!-- <skip.plugin.source>true</skip.plugin.source> -->
+    <!-- <skip.plugin.javadoc>true</skip.plugin.javadoc> -->
+    <!-- <skip.plugin.checkstyle>true</skip.plugin.checkstyle> -->
+    <!-- <skip.plugin.findbugs>true</skip.plugin.findbugs> -->
+    <!-- <skip.plugin.pmd>true</skip.plugin.pmd> -->
 
   </properties>
 
-<!--   <profiles> -->
-<!--     <profile> -->
-<!--       <id>modules</id> -->
-<!--       <modules> -->
-<!--         <module>../jatoo-cli</module> -->
-<!--         <module>../jatoo-image</module> -->
-<!--       </modules> -->
-<!--     </profile> -->
-<!--   </profiles> -->
-
   <dependencyManagement>
     <dependencies>
-
-<!--       <dependency> -->
-<!--         <groupId>net.sulea.cristian</groupId> -->
-<!--         <artifactId>jatoo-cli</artifactId> -->
-<!--         <version>${project.version}</version> -->
-<!--       </dependency> -->
-<!--       <dependency> -->
-<!--         <groupId>net.sulea.cristian</groupId> -->
-<!--         <artifactId>jatoo-image</artifactId> -->
-<!--         <version>${project.version}</version> -->
-<!--       </dependency> -->
 
       <dependency>
         <groupId>log4j</groupId>
@@ -102,9 +92,23 @@
         <version>0.1.50</version>
       </dependency>
 
-
     </dependencies>
   </dependencyManagement>
+
+
+  <profiles>
+
+    <profile>
+
+      <id>modules</id>
+
+      <modules>
+        <module>../jatoo-cli</module>
+        <module>../jatoo-image</module>
+      </modules>
+    </profile>
+
+  </profiles>
 
 
 </project>
