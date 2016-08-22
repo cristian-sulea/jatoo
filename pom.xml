@@ -6,7 +6,7 @@
     <groupId>net.sulea.cristian</groupId>
     <artifactId>maven-project-parent-java</artifactId>
     <!-- <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
-    <version>1.4.2</version>
+    <version>1.4.5</version>
   </parent>
 
   <artifactId>jatoo</artifactId>
@@ -39,23 +39,16 @@
     <url>https://github.com/cristian-sulea/jatoo</url>
   </scm>
 
-  <distributionManagement>
-    <site>
-      <id>cristian.sulea.net-${project.artifactId}</id>
-      <url>file:///cristian.sulea.net/${project.artifactId}/</url>
-    </site>
-  </distributionManagement>
-
 
   <properties>
 
-    <!-- <skip.plugin.surefire>true</skip.plugin.surefire> -->
-    <!-- <skip.plugin.surefire.report>true</skip.plugin.surefire.report> -->
-    <!-- <skip.plugin.source>true</skip.plugin.source> -->
-    <!-- <skip.plugin.javadoc>true</skip.plugin.javadoc> -->
-    <!-- <skip.plugin.checkstyle>true</skip.plugin.checkstyle> -->
-    <!-- <skip.plugin.findbugs>true</skip.plugin.findbugs> -->
-    <!-- <skip.plugin.pmd>true</skip.plugin.pmd> -->
+    <skip.plugin.surefire>true</skip.plugin.surefire>
+    <skip.plugin.surefire.report>true</skip.plugin.surefire.report>
+    <skip.plugin.source>true</skip.plugin.source>
+    <skip.plugin.javadoc>true</skip.plugin.javadoc>
+    <skip.plugin.checkstyle>true</skip.plugin.checkstyle>
+    <skip.plugin.findbugs>true</skip.plugin.findbugs>
+    <skip.plugin.pmd>true</skip.plugin.pmd>
 
   </properties>
 
