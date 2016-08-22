@@ -42,13 +42,16 @@
 
   <properties>
 
+    <skip.plugin.source>true</skip.plugin.source>
     <skip.plugin.surefire>true</skip.plugin.surefire>
     <skip.plugin.surefire.report>true</skip.plugin.surefire.report>
-    <skip.plugin.source>true</skip.plugin.source>
     <skip.plugin.javadoc>true</skip.plugin.javadoc>
     <skip.plugin.checkstyle>true</skip.plugin.checkstyle>
+    <skip.plugin.checkstyle.report>true</skip.plugin.checkstyle.report>
     <skip.plugin.findbugs>true</skip.plugin.findbugs>
+    <skip.plugin.findbugs.report>true</skip.plugin.findbugs.report>
     <skip.plugin.pmd>true</skip.plugin.pmd>
+    <skip.plugin.pmd.report>true</skip.plugin.pmd.report>
 
   </properties>
 
