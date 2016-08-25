@@ -99,8 +99,9 @@
       <id>modules</id>
 
       <modules>
-        <!-- <module>../jatoo-cli</module> -->
+        <module>../jatoo-cli</module>
         <module>../jatoo-image</module>
+        <module>../jatoo-resources</module>
       </modules>
     </profile>
 
