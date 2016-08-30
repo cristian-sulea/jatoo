@@ -6,14 +6,14 @@
     <groupId>net.sulea.cristian</groupId>
     <artifactId>maven-project-parent-java</artifactId>
     <!-- <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
-    <version>1.4.5</version>
+    <version>1.5.0</version>
   </parent>
 
   <artifactId>jatoo</artifactId>
   <packaging>pom</packaging>
 
 
-  <version>4.0.2</version>
+  <version>4.1.0</version>
 
 
   <name>JaToo</name>
