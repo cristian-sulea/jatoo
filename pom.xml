@@ -1,111 +1,113 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
 
-  <parent>
-    <groupId>net.sulea.cristian</groupId>
-    <artifactId>maven-project-parent-java</artifactId>
-    <!-- <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
-    <version>1.5.0</version>
-  </parent>
+	<parent>
+		<groupId>net.sulea.cristian</groupId>
+		<artifactId>maven-project-parent-java</artifactId>
+		<!-- <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
+		<version>1.5.0</version>
+	</parent>
 
-  <artifactId>jatoo</artifactId>
-  <packaging>pom</packaging>
-
-
-  <version>4.1.0</version>
+	<artifactId>jatoo</artifactId>
+	<packaging>pom</packaging>
 
 
-  <name>JaToo</name>
-  <description>A set of Java™ Open Source tools and utilities to be used day by day in Java™ development as libraries or as stand alone applications.</description>
-  <url>http://cristian.sulea.net/projects/jatoo/</url>
-
-  <inceptionYear>2014</inceptionYear>
+	<version>4.1.0</version>
 
 
-  <developers>
-    <developer>
-      <id>cristian.sulea</id>
-      <name>Cristian Sulea</name>
-      <email>cristian.sulea.79@gmail.com</email>
-      <url>http://cristian.sulea.net</url>
-    </developer>
-  </developers>
+	<name>JaToo</name>
+	<description>A set of Java™ Open Source tools and utilities to be used day by day in Java™ development as libraries or as stand alone applications.</description>
+	<url>http://cristian.sulea.net/projects/jatoo/</url>
+
+	<inceptionYear>2014</inceptionYear>
 
 
-  <scm>
-    <connection>scm:git:git@github.com:cristian-sulea/jatoo.git</connection>
-    <developerConnection>scm:git:git@github.com:cristian-sulea/jatoo.git</developerConnection>
-    <url>https://github.com/cristian-sulea/jatoo</url>
-  </scm>
+	<developers>
+		<developer>
+			<id>cristian.sulea</id>
+			<name>Cristian Sulea</name>
+			<email>cristian.sulea.79@gmail.com</email>
+			<url>http://cristian.sulea.net</url>
+		</developer>
+	</developers>
 
 
-  <properties>
-
-    <skip.plugin.source>true</skip.plugin.source>
-    <skip.plugin.surefire>true</skip.plugin.surefire>
-    <skip.plugin.surefire.report>true</skip.plugin.surefire.report>
-    <skip.plugin.javadoc>true</skip.plugin.javadoc>
-    <skip.plugin.checkstyle>true</skip.plugin.checkstyle>
-    <skip.plugin.checkstyle.report>true</skip.plugin.checkstyle.report>
-    <skip.plugin.findbugs>true</skip.plugin.findbugs>
-    <skip.plugin.findbugs.report>true</skip.plugin.findbugs.report>
-    <skip.plugin.pmd>true</skip.plugin.pmd>
-    <skip.plugin.pmd.report>true</skip.plugin.pmd.report>
-
-  </properties>
-
-  <dependencyManagement>
-    <dependencies>
-
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>1.2.17</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>2.4</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-cli</groupId>
-        <artifactId>commons-cli</artifactId>
-        <version>1.3.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.miglayout</groupId>
-        <artifactId>miglayout-swing</artifactId>
-        <version>4.2</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.jcraft</groupId>
-        <artifactId>jsch</artifactId>
-        <version>0.1.50</version>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
+	<scm>
+		<connection>scm:git:git@github.com:cristian-sulea/jatoo.git</connection>
+		<developerConnection>scm:git:git@github.com:cristian-sulea/jatoo.git</developerConnection>
+		<url>https://github.com/cristian-sulea/jatoo</url>
+	</scm>
 
 
-  <profiles>
+	<properties>
 
-    <profile>
+		<skip.plugin.source>true</skip.plugin.source>
+		<skip.plugin.surefire>true</skip.plugin.surefire>
+		<skip.plugin.surefire.report>true</skip.plugin.surefire.report>
+		<skip.plugin.javadoc>true</skip.plugin.javadoc>
+		<skip.plugin.checkstyle>true</skip.plugin.checkstyle>
+		<skip.plugin.checkstyle.report>true</skip.plugin.checkstyle.report>
+		<skip.plugin.findbugs>true</skip.plugin.findbugs>
+		<skip.plugin.findbugs.report>true</skip.plugin.findbugs.report>
+		<skip.plugin.pmd>true</skip.plugin.pmd>
+		<skip.plugin.pmd.report>true</skip.plugin.pmd.report>
 
-      <id>modules</id>
+	</properties>
 
-      <modules>
-        <module>../jatoo-cli</module>
-        <module>../jatoo-image</module>
-        <module>../jatoo-resources</module>
-      </modules>
-    </profile>
+	<dependencyManagement>
+		<dependencies>
 
-  </profiles>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>1.3.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.miglayout</groupId>
+				<artifactId>miglayout-swing</artifactId>
+				<version>4.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.jcraft</groupId>
+				<artifactId>jsch</artifactId>
+				<version>0.1.50</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+	<profiles>
+
+		<profile>
+
+			<id>modules</id>
+
+			<modules>
+				<module>../jatoo-cli</module>
+				<module>../jatoo-image</module>
+				<module>../jatoo-resources</module>
+				<!-- <module>../jatoo-ui</module> -->
+				<!-- <module>../jatoo-video</module> -->
+			</modules>
+		</profile>
+
+	</profiles>
 
 
 </project>
