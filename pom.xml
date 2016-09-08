@@ -101,6 +101,7 @@
       <modules>
         <module>../jatoo-cli</module>
         <module>../jatoo-image</module>
+        <module>../jatoo-mp3</module>
         <module>../jatoo-properties</module>
         <module>../jatoo-resources</module>
         <module>../jatoo-ui</module>
