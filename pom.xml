@@ -89,6 +89,12 @@
       </dependency>
 
       <dependency>
+        <groupId>org.apache.sanselan</groupId>
+        <artifactId>sanselan</artifactId>
+        <version>0.97-incubator</version>
+      </dependency>
+
+      <dependency>
         <groupId>${project.groupId}</groupId>
         <version>${project.version}</version>
         <artifactId>jatoo-app</artifactId>
@@ -102,6 +108,11 @@
         <groupId>${project.groupId}</groupId>
         <version>${project.version}</version>
         <artifactId>jatoo-image</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+        <artifactId>jatoo-image-metadata</artifactId>
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
@@ -148,6 +159,7 @@
         <module>../jatoo-app</module>
         <module>../jatoo-cli</module>
         <module>../jatoo-image</module>
+        <module>../jatoo-image-metadata</module>
         <module>../jatoo-log4j</module>
         <module>../jatoo-mp3</module>
         <module>../jatoo-properties</module>
