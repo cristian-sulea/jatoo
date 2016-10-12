@@ -95,54 +95,15 @@
       </dependency>
 
       <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-app</artifactId>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.2</version>
       </dependency>
+
       <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-cli</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-image</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-image-metadata</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-log4j</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-mp3</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-properties</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-resources</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-ui</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <version>${project.version}</version>
-        <artifactId>jatoo-video</artifactId>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20160810</version>
       </dependency>
 
     </dependencies>
