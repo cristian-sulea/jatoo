@@ -117,16 +117,19 @@
       <id>modules</id>
 
       <modules>
-        <module>../jatoo-app</module>
-        <module>../jatoo-cli</module>
-        <module>../jatoo-image</module>
-        <module>../jatoo-image-metadata</module>
-        <module>../jatoo-log4j</module>
-        <module>../jatoo-mp3</module>
-        <module>../jatoo-properties</module>
+<!--         <module>../jatoo-app</module> -->
+        <module>../jatoo-apps-suite</module>
+<!--         <module>../jatoo-cli</module> -->
+<!--         <module>../jatoo-image</module> -->
+<!--         <module>../jatoo-image-metadata</module> -->
+<!--         <module>../jatoo-log4j</module> -->
+<!--         <module>../jatoo-mp3</module> -->
+<!--         <module>../jatoo-properties</module> -->
         <module>../jatoo-resources</module>
-        <module>../jatoo-ui</module>
-        <module>../jatoo-video</module>
+        <module>../jatoo-telegram</module>
+<!--         <module>../jatoo-ui</module> -->
+        <module>../jatoo-weather</module>
+        <module>../jatoo-weather-openweathermap</module>
       </modules>
     </profile>
 
