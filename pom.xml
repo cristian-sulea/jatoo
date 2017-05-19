@@ -5,15 +5,15 @@
   <parent>
     <groupId>net.sulea.cristian</groupId>
     <artifactId>maven-project-parent-java</artifactId>
-    <!-- <relativePath>../maven-project-parent-java/pom.xml</relativePath> -->
-    <version>1.5.0</version>
+    <relativePath>../maven-project-parent-java/pom.xml</relativePath>
+    <version>2.0</version>
   </parent>
 
   <artifactId>jatoo</artifactId>
   <packaging>pom</packaging>
 
 
-  <version>4.1.0</version>
+  <version>5.0</version>
 
 
   <name>JaToo</name>
@@ -23,12 +23,23 @@
   <inceptionYear>2014</inceptionYear>
 
 
+  <organization>
+    <name>Cristian Sulea</name>
+    <url>http://cristian.sulea.net</url>
+  </organization>
+
   <developers>
     <developer>
       <id>cristian.sulea</id>
       <name>Cristian Sulea</name>
       <email>cristian.sulea.79@gmail.com</email>
       <url>http://cristian.sulea.net</url>
+      <timezone>Europe/Bucharest</timezone>
+      <roles>
+        <role>owner</role>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
     </developer>
   </developers>
 
@@ -42,16 +53,16 @@
 
   <properties>
 
-    <skip.plugin.source>true</skip.plugin.source>
-    <skip.plugin.surefire>true</skip.plugin.surefire>
-    <skip.plugin.surefire.report>true</skip.plugin.surefire.report>
-    <skip.plugin.javadoc>true</skip.plugin.javadoc>
-    <skip.plugin.checkstyle>true</skip.plugin.checkstyle>
-    <skip.plugin.checkstyle.report>true</skip.plugin.checkstyle.report>
-    <skip.plugin.findbugs>true</skip.plugin.findbugs>
-    <skip.plugin.findbugs.report>true</skip.plugin.findbugs.report>
-    <skip.plugin.pmd>true</skip.plugin.pmd>
-    <skip.plugin.pmd.report>true</skip.plugin.pmd.report>
+    <!-- <skip.plugin.source>true</skip.plugin.source> -->
+    <!-- <skip.plugin.surefire>true</skip.plugin.surefire> -->
+    <!-- <skip.plugin.surefire.report>true</skip.plugin.surefire.report> -->
+    <!-- <skip.plugin.javadoc>true</skip.plugin.javadoc> -->
+    <!-- <skip.plugin.checkstyle>true</skip.plugin.checkstyle> -->
+    <!-- <skip.plugin.checkstyle.report>true</skip.plugin.checkstyle.report> -->
+    <!-- <skip.plugin.findbugs>true</skip.plugin.findbugs> -->
+    <!-- <skip.plugin.findbugs.report>true</skip.plugin.findbugs.report> -->
+    <!-- <skip.plugin.pmd>true</skip.plugin.pmd> -->
+    <!-- <skip.plugin.pmd.report>true</skip.plugin.pmd.report> -->
 
   </properties>
 
@@ -117,38 +128,23 @@
       <id>modules</id>
 
       <modules>
-<!--         <module>../jatoo-app</module> -->
-        <module>../jatoo-apps-suite</module>
-<!--         <module>../jatoo-cli</module> -->
-<!--         <module>../jatoo-image</module> -->
-<!--         <module>../jatoo-image-metadata</module> -->
-<!--         <module>../jatoo-log4j</module> -->
-<!--         <module>../jatoo-mp3</module> -->
-<!--         <module>../jatoo-properties</module> -->
-        <module>../jatoo-resources</module>
-        <module>../jatoo-telegram</module>
-<!--         <module>../jatoo-ui</module> -->
-        <module>../jatoo-weather</module>
-        <module>../jatoo-weather-openweathermap</module>
+        <!-- <module>../jatoo-app</module> -->
+        <!-- <module>../jatoo-apps-suite</module> -->
+        <!-- <module>../jatoo-cli</module> -->
+        <!-- <module>../jatoo-image</module> -->
+        <!-- <module>../jatoo-image-metadata</module> -->
+        <!-- <module>../jatoo-log4j</module> -->
+        <!-- <module>../jatoo-mp3</module> -->
+        <!-- <module>../jatoo-properties</module> -->
+        <!-- <module>../jatoo-resources</module> -->
+        <!-- <module>../jatoo-telegram</module> -->
+        <!-- <module>../jatoo-ui</module> -->
+        <!-- <module>../jatoo-weather</module> -->
+        <!-- <module>../jatoo-weather-openweathermap</module> -->
       </modules>
     </profile>
 
   </profiles>
-
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>net.sulea.cristian</groupId>
-        <artifactId>maven-plugin-set-license</artifactId>
-        <version>2.0.0</version>
-        <configuration>
-          <licenseHeader>../maven-plugin-set-license/src/license/HEADER</licenseHeader>
-          <licenseFile>../maven-plugin-set-license/src/license/LICENSE</licenseFile>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
 
 </project>
