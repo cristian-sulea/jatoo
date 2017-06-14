@@ -66,6 +66,7 @@
   <modules>
     <module>../jatoo-app</module>
     <module>../jatoo-cli</module>
+    <module>../jatoo-cli-abstract</module>
     <module>../jatoo-cli-image</module>
     <module>../jatoo-exec</module>
     <module>../jatoo-image</module>
