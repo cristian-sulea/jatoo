@@ -71,6 +71,7 @@
     <module>../jatoo-exec</module>
     <module>../jatoo-image</module>
     <module>../jatoo-image-metadata-exiftool</module>
+    <module>../jatoo-imager</module>
     <module>../jatoo-log4j</module>
     <module>../jatoo-properties</module>
     <module>../jatoo-resources</module>
