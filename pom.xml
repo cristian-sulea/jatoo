@@ -47,8 +47,39 @@
   </scm>
 
 
+  <properties>
+    <jatoo.projects.version.range>[5.0,6.0)</jatoo.projects.version.range>
+  </properties>
+
+
   <dependencyManagement>
     <dependencies>
+
+      <dependency>
+        <groupId>net.sulea.cristian</groupId>
+        <artifactId>jatoo-image</artifactId>
+        <version>${jatoo.projects.version.range}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sulea.cristian</groupId>
+        <artifactId>jatoo-image-metadata-extractor</artifactId>
+        <version>${jatoo.projects.version.range}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sulea.cristian</groupId>
+        <artifactId>jatoo-properties</artifactId>
+        <version>${jatoo.projects.version.range}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sulea.cristian</groupId>
+        <artifactId>jatoo-resources</artifactId>
+        <version>${jatoo.projects.version.range}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sulea.cristian</groupId>
+        <artifactId>jatoo-ui</artifactId>
+        <version>${jatoo.projects.version.range}</version>
+      </dependency>
 
       <dependency>
         <groupId>log4j</groupId>
